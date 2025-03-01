@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ramadan Mubarak Card</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      position: relative;
+      overflow: hidden;
+      font-family:Georgia, 'Times New Roman', Times, serif;
+    }
+
+    video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .card {
+      background: rgba(248, 194, 145, 0.9);
+      color: #2c2c54;
+      padding: 50px 30px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin: 0;
+      animation: bounce 2s infinite;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin: 10px 0 20px;
+    }
+
+    .moon {
+      font-size: 4rem;
+      animation: glow 1.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes glow {
+      from { color: #ffeaa7; }
+      to { color: #f6e58d; }
+    }
+
+    .play-button {
+      background: #2c2c54;
+      color: #f8c291;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .play-button:hover {
+      background: #4a4a8a;
+    }
+  </style>
+</head>
+<body>
+  <video autoplay muted loop>
+    <source src="ramadan1.mp4" type="video/mp4">
+    
+  </video>
+
+  <div class="card">
+    <div class="moon">🌙</div>
+    <h1>Ramadan Mubarak</h1>
+    <p>Wishing you a blessed and peaceful Ramadan!</p>
+    <button class="play-button" onclick="playAudio()">Play Greetings</button>
+  </div>
+
+  <audio id="greetingAudio" src="ramadan.mp3"></audio>
+
+  <script>
+    function playAudio() {
+      const audio = document.getElementById('greetingAudio');
+      audio.play();
+    }
+  </script>
+</body>
+</html>
